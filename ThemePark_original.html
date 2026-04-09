@@ -16,8 +16,6 @@ font-family:Arial;
 background:#f5f5f5;
 }
 
-/* HEADER */
-
 header{
 display:flex;
 justify-content:space-between;
@@ -33,8 +31,6 @@ font-weight:bold;
 .logo span{
 color:#ff9900;
 }
-
-/* NAVBAR */
 
 nav ul{
 display:flex;
@@ -63,8 +59,6 @@ background:#ff9900;
 background:#ff9900;
 color:white;
 }
-
-/* HERO */
 
 .hero{
 height:350px;
@@ -113,8 +107,6 @@ margin-bottom: 16px;
 font-size: 1rem;
 }
 
-/* SECTIONS */
-
 .page-section{
 transition:0.3s;
 }
@@ -128,8 +120,6 @@ width:100%;
 margin:0;
 border-radius:0;
 }
-
-/* RIDES */
 
 .rides-section{
 background:white;
@@ -167,8 +157,6 @@ color:white;
 text-align:center;
 padding:10px;
 }
-
-/* PRICING */
 
 .pricing-section{
 padding:60px 50px;
@@ -221,22 +209,17 @@ color:#ff9900;
 .offer-card h3{ 
     color:#ff9900; 
 }
-
 .contact-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:30px;
 }
-
 .contact-card{
 background:#f5f5f5;
 padding:30px;
 border-radius:12px;
 text-align:center;
 }
-
-/* FORMS */
-
 .section{
 display:none;
 background:white;
@@ -260,9 +243,6 @@ max-width:500px;
     border-radius:5px; 
     cursor:pointer; 
 }
-
-/* BUTTON */
-
 .nav_button{
 background:#ff9900;
 color:white;
@@ -273,9 +253,6 @@ cursor:pointer;
 display:block;
 margin:20px auto;
 }
-
-/* FOOTER */
-
 footer{
 background:#333;
 color:white;
@@ -293,17 +270,16 @@ margin-top:40px;
 
 <nav>
 <ul>
-<li><button class="nav-link" onclick="focusSection('home')">Home</button></li>
-<li><button class="nav-link" onclick="focusSection('rides')">Rides</button></li>
-<li><button class="nav-link" onclick="focusSection('tickets')">Tickets</button></li>
-<li><button class="nav-link" onclick="focusSection('contact')">Contacts</button></li>
-<li><button onclick="showLogin()">Login</button></li>
-<li><button onclick="showBooking()">Book Tickets</button></li>
+<li><a href="home.html" target="_blank" class="nav_button">Home</a></li>
+<li><a href="ride.html" target="_blank" class="nav_button">Rides</a></li>
+<li><a href="tickets.html" target="_blank" class="nav_button">Tickets</a></li>
+<li><a href="contact.html" target="_blank" class="nav_button">Contacts</a></li>
+<li><button onclick="showLogin()" class="nav_button">Login</button></li>
+<li><button onclick="showBooking()" class="nav_button">Book Tickets</button></li>
 </ul>
 </nav>
 </header>
 
-<!-- HOME -->
 <div id="home" class="page-section">
 <section class="hero">
 <h1>Say WowwHooo</h1>
@@ -311,66 +287,59 @@ margin-top:40px;
 </section>
 
 <div class="welcome-panel">
-<h2>Welcome to Wonderland</h2>
-<p>
-Wonderland Theme Park is your ultimate destination for thrill and fun. Welcome to Wonderla Amusement Park, where fun knows no bounds and thrills await around every corner. Established with the vision of providing unparalleled entertainment experiences, Wonderla is renowned for its world-class rides, attractions, and impeccable service.
-</p>
-<p>
-With locations in Bengaluru, Hyderabad, and Kochi, Wonderla has become synonymous with excitement and adventure.
-</p>
-<p>
-Whether you're seeking adrenaline-pumping thrills or family-friendly fun, Wonderla Bengaluru has something for everyone. From gravity-defying roller coasters to refreshing water slides, Wonderla rides and attractions promise an unforgettable experience for visitors of all ages.
-</p>
-<p>
-Known as the high-tech hub of India, Bangalore boasts a fast-paced life. But there's a world of fun waiting for you, where you can take a step back, relax and enjoy the present that life is.
-</p>
-<p>
-Strap in, for you are in for a wild ride brimming with joy and crazy happiness, with the 60+ rides at Wonderla Bengaluru!
-</p>
-<p>
-Fun from the get-go is what we like and that's exactly what we deliver. The moment you step in, you will feel like you're in a whole other dimension. It's almost like paradise—full of laughter, merrymaking, and thrills!
-</p>
+    <h2>Welcome to Wonderland</h2>
+    <p>
+    Wonderland Theme Park is your ultimate destination for thrill and fun. Welcome to Wonderla Amusement Park, where fun knows no bounds and thrills await around every corner. Established with the vision of providing unparalleled entertainment experiences, Wonderla is renowned for its world-class rides, attractions, and impeccable service.
+    </p>
+    <p>
+    With locations in Bengaluru, Hyderabad, and Kochi, Wonderla has become synonymous with excitement and adventure.
+    </p>
+    <p>
+    Whether you're seeking adrenaline-pumping thrills or family-friendly fun, Wonderla Bengaluru has something for everyone. From gravity-defying roller coasters to refreshing water slides, Wonderla rides and attractions promise an unforgettable experience for visitors of all ages.
+    </p>
+    <p>
+    Known as the high-tech hub of India, Bangalore boasts a fast-paced life. But there's a world of fun waiting for you, where you can take a step back, relax and enjoy the present that life is.
+    </p>
+    <p>
+    Strap in, for you are in for a wild ride brimming with joy and crazy happiness, with the 60+ rides at Wonderla Bengaluru!
+    </p>
+    <p>
+    Fun from the get-go is what we like and that's exactly what we deliver. The moment you step in, you will feel like you're in a whole other dimension. It's almost like paradise—full of laughter, merrymaking, and thrills!
+    </p>
 </div>
 
 <div style="text-align:center;">
-<button onclick="showAll()" class="nav_button">⬅ Back to All</button>
-</div>
+    <section class="rides-section page-section" id="rides">
+        <h2 style="text-align:center;">Iconic Rides</h2>
+            <div class="rides-grid">
+                <div class="ride-card" onclick="openRidePage('Splash Coaster','splash_coaster.png')">
+                <img src="splash_coaster.png" alt="Splash Coaster">
+                <div class="ride-title">Splash Coaster</div>
+                </div>
+                <div class="ride-card" onclick="openRidePage('Sky Flyer','sky_flyer.png')"> 
+                <img src="sky_flyer.png"> 
+                <div class="ride-title">Sky Flyer</div> 
+                </div>
+                <div class="ride-card" onclick="openRidePage('Water Ride','water_ride.png')"> 
+                <img src="water_ride.png"> 
+                <div class="ride-title">Water Ride</div> 
+                </div> 
+                <div class="ride-card" onclick="openRidePage('Thrilling Drop','thrilling_drop.png')"> 
+                <img src="thrilling_drop.png"> 
+                <div class="ride-title">Thrilling Drop</div> 
+                </div> 
+                <div class="ride-card" onclick="openRidePage('Spinning Ride','spinning.png')"> 
+                    <img src="spinning.png"> <div class="ride-title">Spinning Ride</div> 
+                </div> 
+                <div class="ride-card" onclick="openRidePage('Jungle Adventure','jungle.png')"> 
+                <img src="jungle.png"> 
+                <div class="ride-title">Jungle Adventure</div>
+                </div>
+            </div>
+    </section>
 </div>
 
-<!-- RIDES -->
-<section class="rides-section page-section" id="rides">
-
-
-<h2 style="text-align:center;">Iconic Rides</h2>
-
-<div class="rides-grid">
-    <div class="ride-card" onclick="openRidePage('Splash Coaster','splash_coaster.png')">
-    <img src="splash_coaster.png">
-    <div class="ride-title">Splash Coaster</div>
-</div>
-<div class="ride-card" onclick="openRidePage('Sky Flyer','sky_flyer.png')"> 
-    <img src="sky_flyer.png"> 
-    <div class="ride-title">Sky Flyer</div> 
-</div>
-<div class="ride-card" onclick="openRidePage('Water Ride','water_ride.png')"> 
-    <img src="water_ride.png"> 
-    <div class="ride-title">Water Ride</div> 
-</div> 
-<div class="ride-card" onclick="openRidePage('Thrilling Drop','thrilling_drop.png')"> 
-    <img src="thrilling_drop.png"> <div class="ride-title">Thrilling Drop</div> 
-</div> <div class="ride-card" onclick="openRidePage('Spinning Ride','spinning.png')"> 
-    <img src="spinning.png"> <div class="ride-title">Spinning Ride</div> 
-</div> <div class="ride-card" onclick="openRidePage('Jungle Adventure','jungle.png')"> 
-    <img src="jungle.png"> <div class="ride-title">Jungle Adventure</div>
- </div>
-</div>
-<button onclick="showAll()" class="nav_button">⬅ Back to All</button>
-</section>
-
-<!-- TICKETS -->
 <section class="pricing-section page-section" id="tickets">
-
-
 <h2 style="text-align:center;">Ticket Prices</h2>
 <div class="pricing-grid">
     <div class="pricing-card"> 
@@ -402,12 +371,10 @@ Fun from the get-go is what we like and that's exactly what we deliver. The mome
         </ul> 
     </div> 
 </div>
-<button onclick="showAll()" class="nav_button">⬅ Back to All</button>
 </section>
 
-<!-- CONTACT -->
-<section class="pricing-section page-section" id="contact">
 
+<section class="pricing-section page-section" id="contact">
     <section class="offers-section"> 
         <h2>Explore Offers</h2> 
         <div class="offers-list"> 
@@ -422,13 +389,9 @@ Fun from the get-go is what we like and that's exactly what we deliver. The mome
                 <p>Book before 10 AM and enjoy breakfast on us.</p> 
             </div> 
         </div>
-        <button onclick="showAll()" class="nav_button">⬅ Back to All</button> 
     </section>
 
 <h2 style="text-align:center;">Contact Us</h2>
-
-
-
 <div class="contact-grid"> 
     <div class="contact-card"> 
         <h3>📍 Location</h3> 

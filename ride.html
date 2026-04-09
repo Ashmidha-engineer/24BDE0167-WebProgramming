@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wonderland Theme Park - Ride</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Arial, sans-serif;
+    background:#fcfcfc;
+    color:#333;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:#fff;
+    border-bottom:1px solid rgba(255,153,0,0.14);
+}
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+.logo span{
+    color:#ff9900;
+}
+nav ul{
+    display:flex;
+    gap:14px;
+    list-style:none;
+    align-items:center;
+}
+nav a{
+    color:#333;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:12px;
+    transition:background .2s ease;
+}
+nav a:hover{
+    background:rgba(255,153,0,0.12);
+}
+.page-title{
+    max-width:1180px;
+    margin:36px auto 0;
+    padding:0 24px;
+}
+.page-title h1{
+    font-size:2.8rem;
+    line-height:1.05;
+    color:#222;
+}
+.page-title p{
+    margin-top:14px;
+    color:#5e5e5e;
+    line-height:1.8;
+    max-width:760px;
+}
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(180px,1fr));
+    gap:20px;
+    margin:32px auto;
+    max-width:1180px;
+    padding:0 24px;
+}
+.stat-card{
+    background:#fff;
+    border:1px solid rgba(255,153,0,0.16);
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 18px 32px rgba(0,0,0,0.04);
+}
+.stat-card strong{
+    display:block;
+    font-size:2rem;
+    color:#ff9900;
+    margin-bottom:10px;
+}
+.stat-card span{
+    color:#626262;
+}
+.ride-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(240px,1fr));
+    gap:22px;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px 40px;
+}
+.ride-tile{
+    background:#fff;
+    border:1px solid rgba(255,153,0,0.14);
+    border-radius:22px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform .25s ease,box-shadow .25s ease;
+}
+.ride-tile:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 35px rgba(0,0,0,0.08);
+}
+.ride-image{
+    height:210px;
+    width:100%;
+    object-fit:cover;
+    display:block;
+}
+.ride-card-body{
+    padding:22px;
+}
+.ride-card-body h3{
+    margin-bottom:12px;
+    color:#222;
+}
+.ride-card-body p{
+    line-height:1.75;
+    color:#5f5f5f;
+}
+.ride-card-body .tag{
+    display:inline-block;
+    margin-top:14px;
+    padding:8px 14px;
+    background:rgba(255,153,0,0.12);
+    color:#ff9900;
+    border-radius:999px;
+    font-size:.92rem;
+}
+footer{
+    background:#fff;
+    border-top:1px solid rgba(0,0,0,0.05);
+    padding:24px 0;
+    text-align:center;
+    color:#777;
+}
+.back-button{
+    background:#ff9900;
+    color:#fff;
+    padding:10px 16px;
+    border:none;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all .2s ease;
+    margin-left:20px;
+}
+.back-button:hover{
+    background:#e68a00;
+} 
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Wonder<span>la</span></div>
+<button class="back-button" onclick="window.location.href='ThemePark_original.html'">Back</button>
+<nav>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="ride.html">Ride</a></li>
+<li><a href="tickets.html">Tickets</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+<section class="page-title">
+<h1>Top rides for every mood</h1>
+<p>From fast roller coasters to family-friendly water zones, Wonderland has a collection of attractions built for all ages. Choose your adventure and discover what makes each ride special.</p>
+</section>
+<div class="stats">
+<div class="stat-card"><strong>6</strong><span>Featured Rides</span></div>
+<div class="stat-card"><strong>4.8/5</strong><span>Average guest rating</span></div>
+<div class="stat-card"><strong>2</strong><span>Family zones</span></div>
+</div>
+<div class="ride-grid">
+<div class="ride-tile" onclick="openRidePage('Splash Coaster','splash_coaster.png')">
+<img class="ride-image" src="splash_coaster.png" alt="Splash Coaster">
+<div class="ride-card-body"><h3>Splash Coaster</h3><p>A thrilling water coaster with steep drops and splashy surprises built for adrenaline with a cooling finish.</p><span class="tag">Water Ride</span></div>
+</div>
+<div class="ride-tile" onclick="openRidePage('Sky Flyer','sky_flyer.png')">
+<img class="ride-image" src="sky_flyer.png" alt="Sky Flyer">
+<div class="ride-card-body"><h3>Sky Flyer</h3><p>Soar high and feel the breeze while enjoying panoramic park views from a gentle flying carousel.</p><span class="tag">Family Favorite</span></div>
+</div>
+<div class="ride-tile" onclick="openRidePage('Water Ride','water_ride.png')">
+<img class="ride-image" src="water_ride.png" alt="Water Ride">
+<div class="ride-card-body"><h3>Water Ride</h3><p>An exciting splash journey that mixes twists, turns, and refreshing fountains for all ages.</p><span class="tag">Splash Adventure</span></div>
+</div>
+<div class="ride-tile" onclick="openRidePage('Thrilling Drop','thrilling_drop.png')">
+<img class="ride-image" src="thrilling_drop.png" alt="Thrilling Drop">
+<div class="ride-card-body"><h3>Thrilling Drop</h3><p>Feel the rush of a vertical drop with intense free-fall thrills and dramatic height.</p><span class="tag">Adrenaline</span></div>
+</div>
+<div class="ride-tile" onclick="openRidePage('Spinning Ride','spinning.png')">
+<img class="ride-image" src="spinning.png" alt="Spinning Ride">
+<div class="ride-card-body"><h3>Spinning Ride</h3><p>A wild carousel of motion that spins, tilts, and keeps the laughter going fast.</p><span class="tag">Fun</span></div>
+</div>
+<div class="ride-tile" onclick="openRidePage('Jungle Adventure','jungle.png')">
+<img class="ride-image" src="jungle.png" alt="Jungle Adventure">
+<div class="ride-card-body"><h3>Jungle Adventure</h3><p>Explore a themed jungle path with surprises, tunnels, and immersive storytelling.</p><span class="tag">Adventure</span></div>
+</div>
+</div>
+<footer><p>Ready for the next ride? Click any attraction to explore details.</p></footer>
+<script>
+function openRidePage(name,img){let url=`ThemePark_ride.html?name=${encodeURIComponent(name)}&img=${encodeURIComponent(img)}`;window.open(url,'_blank');}
+</script>
+</body>
+</html>

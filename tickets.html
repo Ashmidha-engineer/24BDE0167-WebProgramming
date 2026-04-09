@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wonderland Theme Park - Tickets</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Arial, sans-serif;
+    background:#f8f7f3;
+    color:#333;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:#fff;
+    border-bottom:1px solid rgba(255,153,0,0.12);
+}
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+.logo span{
+    color:#ff9900;
+}
+nav ul{
+    display:flex;
+    gap:14px;
+    list-style:none;
+    align-items:center;
+}
+nav a{
+    color:#333;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:12px;
+    transition:background .2s ease;
+}
+nav a:hover{
+    background:rgba(234, 161, 51, 0.12);
+}
+.page-header{
+    max-width:1180px;
+    margin:36px auto;
+    padding:0 24px;
+}
+.page-header h1{
+    font-size:2.9rem;
+    color:#222;
+    line-height:1.05;
+}
+.page-header p{
+    margin-top:14px;
+    color:#5f5f5f;
+    line-height:1.75;
+    max-width:720px;
+}
+.offer-bar{
+    background:#fff3e6;
+    border:1px solid rgba(255,153,0,0.16);
+    border-radius:18px;
+    padding:24px 28px;
+    margin:30px auto;
+    max-width:1180px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+}
+.offer-bar p{
+    margin:0;
+    color:#6b5b3a;
+}
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(240px,1fr));
+    gap:22px;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px 40px;
+}
+.plan-card{
+    background:#fff;
+    border:1px solid rgba(255,153,0,0.12);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 16px 30px rgba(0,0,0,0.04);
+    transition:transform .2s ease;
+}
+.plan-card:hover{
+    transform:translateY(-3px);
+}
+.plan-card h3{
+    margin-bottom:16px;
+    color:#222;
+}
+.plan-card .price{
+    font-size:2.4rem;
+    color:#ff9900;
+    margin:14px 0;
+}
+.plan-card ul{
+    margin-top:16px;
+    list-style:none;
+    padding-left:0;
+    color:#5e5e5e;
+    line-height:1.8;
+}
+.plan-card li{
+    position:relative;
+    padding-left:20px;
+    margin-bottom:10px;
+}
+.plan-card li:before{
+    content:'•';
+    position:absolute;
+    left:0;
+    top:0;
+    color:#ff9900;
+}
+.details-panel{
+    max-width:1180px;
+    margin:0 auto 48px;
+    padding:30px 24px;
+    background:#fff;
+    border:1px solid rgba(255,153,0,0.14);
+    border-radius:20px;
+    box-shadow:0 14px 28px rgba(0,0,0,0.05);
+}
+.details-panel h2{
+    font-size:2rem;
+    color:#222;
+    margin-bottom:16px;
+}
+.details-panel p{
+    line-height:1.8;
+    color:#565656;
+}
+footer{
+    background:#fff;
+    border-top:1px solid rgba(0,0,0,0.05);
+    padding:26px 0;
+    text-align:center;
+    color:#777;
+}
+.back-button{
+    background:#ff9900;
+    color:#fff;
+    padding:10px 16px;
+    border:none;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all .2s ease;
+    margin-left:20px;
+}
+.back-button:hover{
+    background:#e68a00;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Wonder<span>la</span></div>
+<button class="back-button" onclick="window.location.href='ThemePark_original.html'">Back</button>
+<nav>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="ride.html">Ride</a></li>
+<li><a href="tickets.html">Tickets</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+<section class="page-header">
+<h1>Ticket plans for every visit</h1>
+<p>Choose the plan that matches your group and itinerary. Wonderland ticket packages are designed to keep your day flexible, affordable and filled with exciting experiences.</p>
+</section>
+<div class="offer-bar">
+<p><strong>Online booking</strong> saves up to 20% and guarantees fast entry on busy days.</p>
+<a href="contact.html" style="color:#ff9900;text-decoration:none;font-weight:700;">Need help choosing?</a>
+</div>
+<div class="pricing-grid">
+<div class="plan-card">
+<h3>Child Ticket</h3>
+<p class="price">Rs.199</p>
+<p><strong>Ages 3–12</strong></p>
+<ul>
+<li>Unlimited ride access</li>
+<li>10% food discount</li>
+<li>Priority family entry</li>
+</ul>
+</div>
+<div class="plan-card">
+<h3>Adult Ticket</h3>
+<p class="price">Rs.499</p>
+<p><strong>Ages 13+</strong></p>
+<ul>
+<li>Unlimited rides</li>
+<li>15% food discount</li>
+<li>Fast pass lane</li>
+</ul>
+</div>
+<div class="plan-card">
+<h3>Family Package</h3>
+<p class="price">Rs.1299</p>
+<p><strong>2 Adults + 2 Children</strong></p>
+<ul>
+<li>Unlimited ride access</li>
+<li>20% food discount</li>
+<li>Free parking</li>
+</ul>
+</div>
+</div>
+<div class="details-panel">
+<h2>What’s included</h2>
+<p>All tickets include access to the main park, scheduled live shows, and the seasonal entertainment zone. Choose the Family Package for the best value and extra comfort when visiting with kids.</p>
+<p>For faster entry, arrive 30 minutes before opening or book the express pass add-on at the gate.</p>
+</div>
+<footer><p>Wonderland Theme Park • Book online to save and skip the queue.</p></footer>
+</body>
+</html>
