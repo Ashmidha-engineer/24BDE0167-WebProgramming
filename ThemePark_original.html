@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wonderland Theme Park</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+font-family:Arial;
+background:#f5f5f5;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+.logo span{
+color:#ff9900;
+}
+
+/* NAVBAR */
+
+nav ul{
+display:flex;
+gap:15px;
+list-style:none;
+align-items:center;
+}
+
+nav button{
+background:#ff9900;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.nav-link{
+background:none;
+color:#333;
+font-weight:500;
+background:#ff9900;
+}
+
+.nav-link:hover{
+background:#ff9900;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+height:350px;
+background:url('theme_park.png') center/cover;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:28px;
+text-align:center;
+margin:20px;
+}
+
+.tagline{
+background:white;
+color:#333;
+padding:8px 20px;
+border-radius:20px;
+font-size:18px;
+margin-top:10px;
+}
+
+.welcome-panel{
+background: rgba(255, 153, 0, 0.08);
+border: 1px solid rgba(255, 153, 0, 0.3);
+border-radius: 20px;
+padding: 35px 30px;
+max-width: 860px;
+margin: 30px auto;
+box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+color: #333;
+line-height: 1.8;
+text-align: left;
+}
+
+.welcome-panel h2{
+font-size: 2rem;
+margin-bottom: 18px;
+letter-spacing: 1px;
+color: #222;
+}
+
+.welcome-panel p{
+margin-bottom: 16px;
+font-size: 1rem;
+}
+
+/* SECTIONS */
+
+.page-section{
+transition:0.3s;
+}
+
+.hidden{
+display:none;
+}
+
+.focused{
+width:100%;
+margin:0;
+border-radius:0;
+}
+
+/* RIDES */
+
+.rides-section{
+background:white;
+margin:30px;
+padding:40px;
+border-radius:10px;
+}
+
+.rides-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.ride-card{
+position:relative;
+height:250px;
+cursor:pointer;
+border-radius:10px;
+overflow:hidden;
+}
+
+.ride-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.ride-title{
+position:absolute;
+bottom:0;
+width:100%;
+background:rgba(0,0,0,0.7);
+color:white;
+text-align:center;
+padding:10px;
+}
+
+/* PRICING */
+
+.pricing-section{
+padding:60px 50px;
+background:#f9f9f9;
+margin:30px;
+border-radius:10px;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
+
+.pricing-card{
+background:white;
+border-radius:12px;
+padding:30px;
+text-align:center;
+}
+
+.price{
+font-size:32px;
+color:#ff9900;
+}
+
+.offers-section{ 
+    padding:60px 50px; 
+    background:#f9f9f9; 
+    margin:30px; 
+    border-radius:10px; 
+} 
+.offers-section h2{ 
+    text-align:center; 
+    margin-bottom:40px; 
+} 
+.offers-list{ 
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); 
+    gap:30px; 
+} 
+.offer-card{ 
+    background:white; 
+    padding:30px; 
+    border-radius:12px; 
+    text-align:center; 
+} 
+.offer-card h3{ 
+    color:#ff9900; 
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.contact-card{
+background:#f5f5f5;
+padding:30px;
+border-radius:12px;
+text-align:center;
+}
+
+/* FORMS */
+
+.section{
+display:none;
+background:white;
+padding:40px;
+margin:30px auto;
+border-radius:10px;
+max-width:500px;
+}
+.section input, .section select{ 
+    width:100%; 
+    padding:10px; 
+    margin-bottom:10px; 
+    border:1px solid #ccc; 
+    border-radius:5px; 
+} 
+.section button{ 
+    padding:10px; 
+    background:#ff9900; 
+    color:white; 
+    border:none; 
+    border-radius:5px; 
+    cursor:pointer; 
+}
+
+/* BUTTON */
+
+.nav_button{
+background:#ff9900;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:5px;
+cursor:pointer;
+display:block;
+margin:20px auto;
+}
+
+/* FOOTER */
+
+footer{
+background:#333;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Wonder<span>la</span></div>
+
+<nav>
+<ul>
+<li><button class="nav-link" onclick="focusSection('home')">Home</button></li>
+<li><button class="nav-link" onclick="focusSection('rides')">Rides</button></li>
+<li><button class="nav-link" onclick="focusSection('tickets')">Tickets</button></li>
+<li><button class="nav-link" onclick="focusSection('contact')">Contacts</button></li>
+<li><button onclick="showLogin()">Login</button></li>
+<li><button onclick="showBooking()">Book Tickets</button></li>
+</ul>
+</nav>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page-section">
+<section class="hero">
+<h1>Say WowwHooo</h1>
+<div class="tagline">Explore Amazing Rides</div>
+</section>
+
+<div class="welcome-panel">
+<h2>Welcome to Wonderland</h2>
+<p>
+Wonderland Theme Park is your ultimate destination for thrill and fun. Welcome to Wonderla Amusement Park, where fun knows no bounds and thrills await around every corner. Established with the vision of providing unparalleled entertainment experiences, Wonderla is renowned for its world-class rides, attractions, and impeccable service.
+</p>
+<p>
+With locations in Bengaluru, Hyderabad, and Kochi, Wonderla has become synonymous with excitement and adventure.
+</p>
+<p>
+Whether you're seeking adrenaline-pumping thrills or family-friendly fun, Wonderla Bengaluru has something for everyone. From gravity-defying roller coasters to refreshing water slides, Wonderla rides and attractions promise an unforgettable experience for visitors of all ages.
+</p>
+<p>
+Known as the high-tech hub of India, Bangalore boasts a fast-paced life. But there's a world of fun waiting for you, where you can take a step back, relax and enjoy the present that life is.
+</p>
+<p>
+Strap in, for you are in for a wild ride brimming with joy and crazy happiness, with the 60+ rides at Wonderla Bengaluru!
+</p>
+<p>
+Fun from the get-go is what we like and that's exactly what we deliver. The moment you step in, you will feel like you're in a whole other dimension. It's almost like paradise—full of laughter, merrymaking, and thrills!
+</p>
+</div>
+
+<div style="text-align:center;">
+<button onclick="showAll()" class="nav_button">⬅ Back to All</button>
+</div>
+</div>
+
+<!-- RIDES -->
+<section class="rides-section page-section" id="rides">
+
+
+<h2 style="text-align:center;">Iconic Rides</h2>
+
+<div class="rides-grid">
+    <div class="ride-card" onclick="openRidePage('Splash Coaster','splash_coaster.png')">
+    <img src="splash_coaster.png">
+    <div class="ride-title">Splash Coaster</div>
+</div>
+<div class="ride-card" onclick="openRidePage('Sky Flyer','sky_flyer.png')"> 
+    <img src="sky_flyer.png"> 
+    <div class="ride-title">Sky Flyer</div> 
+</div>
+<div class="ride-card" onclick="openRidePage('Water Ride','water_ride.png')"> 
+    <img src="water_ride.png"> 
+    <div class="ride-title">Water Ride</div> 
+</div> 
+<div class="ride-card" onclick="openRidePage('Thrilling Drop','thrilling_drop.png')"> 
+    <img src="thrilling_drop.png"> <div class="ride-title">Thrilling Drop</div> 
+</div> <div class="ride-card" onclick="openRidePage('Spinning Ride','spinning.png')"> 
+    <img src="spinning.png"> <div class="ride-title">Spinning Ride</div> 
+</div> <div class="ride-card" onclick="openRidePage('Jungle Adventure','jungle.png')"> 
+    <img src="jungle.png"> <div class="ride-title">Jungle Adventure</div>
+ </div>
+</div>
+<button onclick="showAll()" class="nav_button">⬅ Back to All</button>
+</section>
+
+<!-- TICKETS -->
+<section class="pricing-section page-section" id="tickets">
+
+
+<h2 style="text-align:center;">Ticket Prices</h2>
+<div class="pricing-grid">
+    <div class="pricing-card"> 
+        <h3>Child Ticket</h3> 
+        <p class="price">Rs.199</p> 
+        <p class="age">(Ages 3-12)</p> 
+        <ul> 
+            <li>Unlimited ride access</li> 
+            <li>Food discount 10%</li> 
+            <li>Meet & Greet</li> 
+        </ul> 
+    </div> 
+    <div class="pricing-card"> 
+        <h3>Adult Ticket</h3>
+         <p class="price">Rs.499</p> 
+         <p class="age">(Ages 13+)</p> 
+         <ul> <li>Unlimited ride access</li> 
+            <li>Food discount 15%</li> 
+            <li>Fast Pass (1 hour)</li> 
+        </ul> 
+    </div> 
+    <div class="pricing-card"> 
+        <h3>Family Package</h3> 
+        <p class="price">Rs.1299</p> 
+        <p class="age">(2 Adults + 2 Children)</p> 
+        <ul> <li>Unlimited ride access</li> 
+            <li>Food discount 20%</li> 
+            <li>Parking included</li> 
+        </ul> 
+    </div> 
+</div>
+<button onclick="showAll()" class="nav_button">⬅ Back to All</button>
+</section>
+
+<!-- CONTACT -->
+<section class="pricing-section page-section" id="contact">
+
+    <section class="offers-section"> 
+        <h2>Explore Offers</h2> 
+        <div class="offers-list"> 
+            <div class="offer-card"> 
+                <h3>Summer Splash Discount</h3> 
+                <p>Get 20% off on all tickets booked online.</p> 
+            </div> <div class="offer-card"> 
+                <h3>Family Fun Pack</h3> 
+                <p>Buy 3 tickets, get the 4th one free!</p> 
+            </div> <div class="offer-card"> 
+                <h3>Early Bird Special</h3> 
+                <p>Book before 10 AM and enjoy breakfast on us.</p> 
+            </div> 
+        </div>
+        <button onclick="showAll()" class="nav_button">⬅ Back to All</button> 
+    </section>
+
+<h2 style="text-align:center;">Contact Us</h2>
+
+
+
+<div class="contact-grid"> 
+    <div class="contact-card"> 
+        <h3>📍 Location</h3> 
+        <p>45/1F, OMR Road, near Kelambakkam</p> 
+        <p>Wonderland, Chennai 603110</p> 
+    </div> 
+    <div class="contact-card"> 
+        <h3>✉️ Contact</h3>
+        <p>info@wonderland.com</p>
+         <p>support@wonderland.com</p> 
+         <p>9876543210</p> 
+        </div> 
+        <div class="contact-card"> 
+            <h3>🕐 Hours</h3> 
+            <p>Mon-Fri: 10 AM - 8 PM</p> 
+            <p>Sat-Sun: 9 AM - 10 PM</p> 
+        </div> 
+    </div>
+<button onclick="showAll()" class="nav_button">⬅ Back to All</button>
+</section>
+
+<section class="section" id="loginSection"> 
+    <h2>Login</h2> 
+    <form onsubmit="handleLogin(event)"> 
+        <input type="text" id="name" placeholder="Name" required> 
+        <input type="email" id="email" placeholder="Email" required> 
+        <input type="tel" id="mobile" placeholder="Mobile Number" required> 
+        <input type="number" id="age" placeholder="Age" required> 
+        <button type="submit">Submit</button> 
+        <button type="button" class="nav-button" onclick="closeSection('loginSection')">Back</button> 
+    </form> 
+</section> 
+<section class="section" id="bookingSection"> 
+    <h2>Book Tickets</h2> 
+    <form onsubmit="submitBooking(event)"> 
+        <input type="text" id="username" placeholder="Username" required> 
+        <select id="ticketType"> 
+            <option>Child Ticket</option> 
+            <option>Adult Ticket</option> 
+            <option>Family Package</option> 
+        </select> 
+        <input type="number" id="numTickets" placeholder="Number of Tickets" required> 
+        <input type="date" id="date" required> 
+        <input type="text" value="Wonderland Chennai"> 
+        <input type="tel" id="contact" placeholder="Contact Number" required> 
+        <button type="submit">Confirm Booking</button> 
+        <button type="button" onclick="closeSection('bookingSection')">Cancel</button> 
+    </form> 
+</section> 
+<section class="ride-details" id="rideDetails"> 
+    <h2 id="rideName"></h2> 
+    <img id="rideImage"> 
+    
+</section>
+<footer>
+<p>2026 Wonderland Theme Park</p>
+</footer>
+
+<script>
+function focusSection(id){
+let sections=document.querySelectorAll(".page-section");
+
+sections.forEach(sec=>{
+sec.classList.add("hidden");
+sec.classList.remove("focused");
+});
+
+let active=document.getElementById(id);
+active.classList.remove("hidden");
+active.classList.add("focused");
+
+window.scrollTo(0,0);
+}
+
+function showAll(){
+let sections=document.querySelectorAll(".page-section");
+
+sections.forEach(sec=>{
+sec.classList.remove("hidden");
+sec.classList.remove("focused");
+});
+}
+
+function showLogin(){ document.getElementById("loginSection").style.display="block"; window.scrollTo(0,document.body.scrollHeight); } function showBooking(){ document.getElementById("bookingSection").style.display="block"; window.scrollTo(0,document.body.scrollHeight); } function closeSection(id){ document.getElementById(id).style.display="none"; } function handleLogin(event){ event.preventDefault(); let mobile=document.getElementById("mobile").value; if(!/^[0-9]{10}$/.test(mobile)){ alert("Enter valid 10 digit mobile number"); return; } alert("Login Successful!"); } function submitBooking(event){ event.preventDefault(); let contact=document.getElementById("contact").value; if(!/^[0-9]{10}$/.test(contact)){ alert("Enter valid contact number"); return; } alert("Ticket Booked Successfully!"); }
+
+function openRidePage(name,img){
+let url=`ThemePark_ride.html?name=${encodeURIComponent(name)}&img=${encodeURIComponent(img)}`;
+window.open(url,"_blank");
+}
+</script>
+
+</body>
+</html>
